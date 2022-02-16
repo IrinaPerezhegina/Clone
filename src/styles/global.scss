@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap');
+
+$black: #000;
+$white:#fff;
+$bg-gradient:linear-gradient(151deg, rgba(50,108,255,1) 0%, rgba(38,255,242,1) 100%);
+$bg-gradient-safe:rgb(50,108,255);
+
+html {
+    font-size: 10px;
+}
+body {
+    background-color: #000 ;
+    color: #fff;
+    font-size: 14px;
+    // font-family: 'Marcellus', serif;
+    // font-family: 'Marcellus SC', serif;
+ 
+    font-family: 'Mulish', sans-serif;
+}
+button {
+    &:focus {
+        outline: none;
+    }
+}
+
+
+// for media
+// colors
+$primary: #010101;
+$gradient: linear-gradient(to right bottom, #326CFF, #26FFF2);
+$gradient-darken: linear-gradient(to right bottom, darken(#326CFF, 20), darken(#26FFF2, 20));
+$outline: #2CB7F8;
+
+// media queries
+$desktop: 1200px;
+$laptop: 991px;
+$tablet: 768px;
+$mobile: 480px;
+$mobile-landscape: 850px;
+$mobile-sm: 360px;
+$mobile-sm-landscape: 650px;

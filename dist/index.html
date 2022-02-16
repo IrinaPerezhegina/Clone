@@ -1,0 +1,81 @@
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PageTitle</title><style>.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 144rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin: 0 auto;
+
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    &-item {
+        margin: 0 2.5rem;
+    }
+    &-link {
+        text-decoration: none;
+        font-weight: 700;
+        color: rgba($white, 0.5);
+        transition: 0.2s ease color;
+        &:hover {
+            color: rgba($white, 1);
+        }
+        &::after{
+            content: '';
+            opacity: 0;
+            display: block;
+            width: 100%;
+            height: .2rem;
+            margin-top: .5rem;
+            border-radius: 5rem;
+            background: $bg-gradient-safe;
+            background: $bg-gradient;     
+        }
+    &.active {
+        color: rgba($white, 1);
+        &::after {
+            opacity: 1;
+        }
+    }
+  }
+}
+.control {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    &-item {
+        margin-left: 7.5rem;
+    }
+    &-btn {
+        background-color: transparent;
+        border: none;
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        &_search {
+            background-image: url('../images/search.svg');
+            width: 1.8rem;
+            height:1.8rem;
+        }
+        &_notice {
+            background-image: url('../images/notice.svg');
+            width: 2.13rem;
+            height:2.35rem;
+        }
+        &_account {
+            background-image: url('../images/account.svg');
+            width: 1.8rem;
+            height:1.92rem;
+        }
+
+            
+    }
+}</style><script defer="defer" src="scripts.js"></script><script defer="defer" src="user.js"></script></head><body><header><div class="header"><a href="#"><img src="assets/30006a5115b6e9054e58.svg"></a><nav><ul class="nav"><li class="nav-item"><a class="nav-link active" href="#">Home</a></li><li class="nav-item"><a class="nav-link" href="#">TV Shows</a></li><li class="nav-item"><a class="nav-link" href="#">Movies</a></li><li class="nav-item"><a class="nav-link" href="#">Series</a></li></ul></nav><ul class="control"><li class="control-item"><button class="control-btn control-btn_search"></button></li><li class="control-item"><button class="control-btn control-btn_notice"></button></li><li class="control-item"><button class="control-btn control-btn_account"></button></li></ul></div></header><section class="section-banner"><img class="section-banner__image" src="assets/d0d8fa2646ec1ccc576a.png"><div class="container"><div class="banner"><h1 class="banner__title">Zack Snyder's Justice League</h1><div class="banner-info"><span class="banner-info__year">2021</span><span class="banner-info__age">18+</span><span class="banner-info__time">4h 2min</span><span class="banner-info__rating">8.8</span></div><p class="banner__text">Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.</p><div class="banner-control"><button class="banner-control__btn banner-control__btn-main">Watch</button><button class="banner-control__btn banner-control__btn-more">More information</button></div></div></div></section><section class="section"><div class="container"><h2 class="section__h2"><a class="section__h2-link" href="#">Trending TV Shows</a></h2><div class="movies"><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/6d56f867e91de73af2f1.png" alt="1"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/18b93b95792f5d05b4b8.png" alt="2"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/976fd1d9b0ee0c9fcf1c.png" alt="3"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/ffd42ccd8f845ea25dd0.png" alt="4"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/d89d5ae104e7903d624d.png" alt="5"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/d24e37802c140589e18a.png" alt="6"></a></div></div></div></section><section class="section"><div class="container"><h2 class="section__h2"><a class="section__h2-link" href="#">Trending Movies</a></h2><div class="movies"><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/72ffcb1e9bccb9a69b30.png" alt="1"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/11cb5d1b85c30e455f5f.png" alt="2"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/a08da61145a14d78df2e.png" alt="3"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/78d46361916ed91efe60.png" alt="4"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/1616f891fa9d2aaf2944.png" alt="5"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/7f81041a47ccbc65018a.png" alt="6"></a></div></div><button class="section__btn">See more</button></div></section><section class="section"><div class="container"><h2 class="section__h2"><a class="section__h2-link" href="#">Popular Genres</a></h2><div class="genres"><div class="genres-item genres-item_romance"><div class="genres-icon"><img class="genres__image" src="assets/0f7e46a3f0b8286ae90a.svg" alt=""></div><h3 class="genres__title">Romance</h3></div><div class="genres-item genres-item_drama"><div class="genres-icon"><img class="genres__image" src="assets/9a14877d016e0cb57e93.svg" alt=""></div><h3 class="genres__title">Drama</h3></div><div class="genres-item genres-item_historical"><div class="genres-icon"><img class="genres__image" src="assets/60282f99447eef02bf98.svg" alt=""></div><h3 class="genres__title">Historical</h3></div><div class="genres-item genres-item_action"><div class="genres-icon"><img class="genres__image" src="assets/c8ecf22fb613283d42f4.svg" alt=""></div><h3 class="genres__title">Action</h3></div><div class="genres-item genres-item_sci-fi"><div class="genres-icon"><img class="genres__image" src="assets/1f251b364326dad0ce9a.svg" alt=""></div><h3 class="genres__title">Sci-fi</h3></div><div class="genres-item genres-item_horror"><div class="genres-icon"><img class="genres__image" src="assets/7bcb79b4d419c8f5b545.svg" alt=""></div><h3 class="genres__title">Horror</h3></div><div class="genres-item genres-item_comedy"><div class="genres-icon"><img class="genres__image" src="assets/54398b3f2c1d6225b3b5.svg" alt=""></div><h3 class="genres__title">Comedy</h3></div><div class="genres-item genres-item_documentary"><div class="genres-icon"><img class="genres__image" src="assets/cfad48019f90a40fa558.svg" alt=""></div><h3 class="genres__title">Documentary</h3></div></div></div></section><section class="section"><div class="container"><h2 class="section__h2"><a class="section__h2-link" href="#">Popular Actors & Directors</a></h2><div class="actors"><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/cc4a9815103d007e55bf.png" alt=""></a><h3 class="actors__title">Samantha Bowen</h3></div><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/22c711856fa134df0c27.png" alt=""></a><h3 class="actors__title">Rhys Birch</h3></div><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/62068735f715d6bb47d4.png" alt=""></a><h3 class="actors__title">James Holloway</h3></div><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/12396e21b03ae2c61357.png" alt=""></a><h3 class="actors__title">Joshua Walton</h3></div><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/bf95820efd124263c561.png" alt=""></a><h3 class="actors__title">Patrick Elliott</h3></div><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/0cabfbde85528965df49.png" alt=""></a><h3 class="actors__title">Morgan O'Neill</h3></div></div></div></section><section class="section"><div class="container"><div class="marketing"><div class="marketing-item"><a class="marketing__link" href="#"><img class="marketing__img first-item" src="assets/59d67c061e53e4a8621a.png" alt=""></a></div><div class="marketing-item"><a class="marketing__link" href="#"><img class="marketing__img last-item" src="assets/429997a8d41568ea2f7c.png" alt=""></a></div></div></div></section><section class="section"><div class="container"><div class="offer"><h2 class="offer__title">Are You New Here ? Don’t&nbsp;wait, Register Now.</h2><button class="offer__btn">Register Now</button></div></div></section><footer><div class="footer"><div class="footer-item"><a href="#"><img src="assets/30006a5115b6e9054e58.svg"></a></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Voice over and Subtitle</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Media Center</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Privacy</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Contact us</a></li></ul></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Voice Description</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Investor Relations</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Legal Provisions</a></li></ul></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Help Center</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Job Opportunities</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Cookies Preferences</a></li></ul></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Gift Cards</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Terms of Use</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Corporate Informations</a></li></ul></div></div></footer></body></html>
