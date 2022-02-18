@@ -1,4 +1,17 @@
-<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PageTitle</title><style>.header {
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PageTitle</title><style>@import 'global.scss';
+
+// @use 'fonts.scss';
+@import 'header.scss';
+@import 'banner.scss';
+@import 'content.scss';
+@import 'footer.scss';
+
+
+
+// @import "~bootstrap/scss/bootstrap";
+
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,4 +91,407 @@
 
             
     }
+}
+.container {
+    max-width: 144rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin: 0 auto;
+}
+.section-banner{
+    border-bottom: .1rem solid #2F2E2E;
+    position: relative;
+    overflow: hidden;
+    &__image {
+       position: absolute;
+       right: 0;
+       z-index: -1;
+       height: 100%;
+    }
+}
+.banner {
+    max-width: 56.2rem;
+    padding-top: 12.2rem;
+    padding-bottom: 20.3rem;
+    background-color: $black;
+    box-shadow: 100px 0px 100px #000000;
+    &__title {
+        font-family: 'Marcellus', serif;
+        line-height: 7.5rem;
+        font-size: 8rem;
+    }
+    &__text {
+        color: #C2C2C2;
+        font-size: 1.8rem;
+        line-height: 1.6;
+    }
+    &-info {
+        font-weight: 800;
+        margin-bottom: 2.9rem ;
+        &__year {
+            margin-right: 1.8rem;
+        }
+        &__age {
+            margin-right: 1.8rem;
+            position: relative;
+            width: 6rem;
+            text-align: center;
+            display: inline-block;
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2.4rem;
+                background-image: url('../images/age.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: calc(50% - 1.2rem);
+                left: 0;
+                right: 0;
+            }
+        }
+        &__time {
+            margin-right: 6.1rem;
+        }
+        &__rating {
+            position: relative;
+          &::after {
+              content: '';
+              display: block;
+              width: 1.6rem;
+              height: 1.6rem;
+              margin-left: 1rem;
+              position: absolute;
+              right: -2.6rem;
+              top: calc(50% - .8rem );
+              background-image: url('../images/star.svg');
+        }}
+    }
+    &-control {
+        margin-top: 3.1rem;
+        &__btn {
+            background-color: transparent;
+            border: none;
+            border-radius: 10rem;
+            padding: 1.5rem 3rem;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 800;
+            cursor: pointer;
+            
+         }
+        &__btn-main {
+            background: $bg-gradient;
+            // background: $bg-gradient-safe;
+            color: $white;
+            position: relative;
+            padding-left: 6rem;
+            margin-right: 3rem;
+            box-shadow: 0px 4px 50px rgba($bg-gradient-safe, 0.5);
+            transition: 0.2s ease box-shadow;
+            &:hover {
+                box-shadow: 0px 0px 0px rgba($bg-gradient-safe, 0.5);
+            }
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 1.4rem;
+                height: 1.8rem;
+                background-image: url('../images/play.svg');
+                position: absolute;
+                left: 3rem;
+                top: calc(50% - .9rem);
+            }
+        }
+        &__btn-more {
+            background-color: $white;
+            color: #323232;
+            transition: .2s ease background-color, .2s ease color;
+            &:hover {
+               color: $white;
+               background-color: transparent;
+               
+               
+            }
+        }
+    }
+}
+.section {
+    padding-top: 5rem;
+    &__h2 {
+        font-size: 2.8rem;
+        line-height: 2rem;
+        padding-left: 2rem;
+        padding-right: 3rem;
+        position: relative;
+        font-weight: 700;
+        display: inline-block;
+        &::before {
+            content: '';
+            display: block;
+            width: .8rem;
+            height: 3.5rem;
+            border-radius: 5rem;
+            background: $bg-gradient-safe;
+            background: $bg-gradient;
+            position: absolute; 
+            left: 0;
+            top: calc(50% - 1.7rem );
+        }
+        &::after {
+            content: '';
+            display: block;
+            width: .9rem;
+            height: 1.5rem;
+            background-image: url('../images/arrow.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            right: 0;
+            top: calc(50% - .7rem)
+        }
+        &-link {
+            color: $white;
+            text-decoration: none;
+        }
+    }
+    &__btn {
+        border: none;
+        border-radius: 10rem;
+        padding: 1.5rem 3rem;
+        font-family: 'Mulish', sans-serif;
+        font-weight: 800;
+        cursor: pointer;
+        background: $bg-gradient;
+        // background: $bg-gradient-safe;
+        color: $white;
+        box-shadow: 0px 4px 50px rgba($bg-gradient-safe, 0.5);
+        transition: 0.2s ease box-shadow;
+        margin-top: 5.5rem;
+        &:hover {
+          box-shadow: 0px 0px 0px rgba($bg-gradient-safe, 0.5);
+        }
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 1.4rem;
+            height: 1.8rem;
+            // background-image: url('../images/play.svg');
+            position: absolute;
+            left: 3rem;
+            top: calc(50% - .9rem);
+            }
+        }
+    }
+.movies {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-item {
+        box-shadow: 0px 0px 0px rgba(44, 176, 249, 0.0);
+        transition: .2s ease box-shadow;
+        flex: 0 0 14%;
+        &:hover {
+            box-shadow: 0px 0px 20px rgba(44, 176, 249, 0.5);
+        }
+    }
+    &__link {
+        overflow: hidden; 
+        position: relative; 
+        width:100% ;
+        height: 30.9rem;
+        display: block;
+    }
+    &__img {
+        border-radius: 2rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
+}
+.genres {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 2.1rem;
+    &-item {
+        flex: 0 0 23.7%;
+        border-radius: 2rem;
+        padding: 4.8rem 1rem 3.8rem;
+        box-sizing: border-box;
+        margin-bottom: 2.7rem;
+        &_romance {
+            background: linear-gradient(109.31deg, #FD093F 2.4%, #F383F1 100%);
+        }
+        &_drama {
+            background: linear-gradient(114.5deg, #0FFFDA 2.22%, #3CDB77 68.84%);
+        }
+        &_historical {
+            background: linear-gradient(109.31deg, #B936FF 2.4%, #57DEDA 100%);
+        }
+        &_action {
+            background: linear-gradient(109.31deg, #FD093F 2.4%, #FB1378 2.41%, #FCCB1A 100%);
+        }
+        &_sci-fi {
+            background: linear-gradient(109.31deg, #FF6472 2.4%, #FDA75D 100%);
+        }
+        &_horror {
+            background: linear-gradient(110.16deg, #13547A 2.37%, #80D0C7 96.77%);
+        }
+        &_comedy {
+            background: linear-gradient(109.93deg, #FFF77B 2.37%, #FFBF42 50%);
+        }
+        &_documentary {
+            background: linear-gradient(109.31deg, #1FA2FF 2.4%, #1FA2FF 2.41%, #1F535C 97.46%);
+        }
+    }
+    &-icon {
+       height: 8rem; 
+       position: relative;
+       overflow: hidden;
+       
+    }
+    &__image {
+        position:absolute; 
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
+    &__title { 
+       font-size: 2.8rem;
+       font-weight: 700;
+       margin: .2rem 0 0 0;
+   }
+
+}
+.actors {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 2.1rem;
+    &-item {
+        flex: 0 0 14%
+    }
+    &__link {
+        overflow: hidden; 
+        position: relative; 
+        width: 19rem ;
+        height: 19rem;
+        display: block;
+    }
+    &__img {
+        border-radius: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        width: 19rem ;
+        height: 19rem;
+    }
+}
+.marketing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 2.1rem;
+    &-item {
+        border-radius: 2rem;
+        flex: 0 0 50%;
+    }
+    &__link {
+        overflow: hidden; 
+        position: relative; 
+        width: 100% ;
+        height: 34.1rem;
+        display: block;
+    }
+    &__img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
+}
+.first-item {
+    border-radius: 2rem 0 0 2rem;
+}
+.last-item  {
+    border-radius: 0 2rem 2rem 0;
+}
+
+.offer {
+  box-sizing:border-box ;
+  max-width: 122.4rem; 
+  margin: 0 auto; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url('../images/offer-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 7.2rem 14.7rem 7.2rem 5.7rem;
+  margin-top: 7rem;
+  margin-bottom: 12.1rem;
+  
+  &__title {
+      font-size: 6.4rem;
+      font-weight: 700;
+      max-width: 80rem;
+      margin: 0;
+      line-height: 1;
+  }
+  &__btn {
+    border: none;
+    border-radius: 10rem;
+    padding: 1.5rem 3rem;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    background: $bg-gradient;
+    // background: $bg-gradient-safe;
+    color: $white;
+    box-shadow: 0px 4px 50px rgba($bg-gradient-safe, 0.5);
+    transition: 0.2s ease box-shadow;
+    &:hover {
+      box-shadow: 0px 0px 0px rgba($bg-gradient-safe, 0.5);
+    }
+}
+}
+footer {
+    background-color: #101012;
+    padding: 7rem 0 5rem;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 144rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin: 0 auto;
+    &-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        &__item {
+            margin-bottom:2rem ;
+        }
+        &__link {
+            font-size: 1.8rem;
+            color: #C2C2C2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    }
+
 }</style><script defer="defer" src="scripts.js"></script><script defer="defer" src="user.js"></script></head><body><header><div class="header"><a href="#"><img src="assets/3ebeb53d739f33353224.svg"></a><nav><ul class="nav"><li class="nav-item"><a class="nav-link active" href="#">Home</a></li><li class="nav-item"><a class="nav-link" href="#">TV Shows</a></li><li class="nav-item"><a class="nav-link" href="#">Movies</a></li><li class="nav-item"><a class="nav-link" href="#">Series</a></li></ul></nav><ul class="control"><li class="control-item"><button class="control-btn control-btn_search"></button></li><li class="control-item"><button class="control-btn control-btn_notice"></button></li><li class="control-item"><button class="control-btn control-btn_account"></button></li></ul></div></header><section class="section-banner"><img class="section-banner__image" src="assets/d0d8fa2646ec1ccc576a.png"><div class="container"><div class="banner"><h1 class="banner__title">Zack Snyder's Justice League</h1><div class="banner-info"><span class="banner-info__year">2021</span><span class="banner-info__age">18+</span><span class="banner-info__time">4h 2min</span><span class="banner-info__rating">8.8</span></div><p class="banner__text">Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.</p><div class="banner-control"><button class="banner-control__btn banner-control__btn-main">Watch</button><button class="banner-control__btn banner-control__btn-more">More information</button></div></div></div></section><section class="section"><div class="container"><h2 class="section__h2"><a class="section__h2-link" href="#">Trending TV Shows</a></h2><div class="movies"><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/6d56f867e91de73af2f1.png" alt="1"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/18b93b95792f5d05b4b8.png" alt="2"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/976fd1d9b0ee0c9fcf1c.png" alt="3"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/ffd42ccd8f845ea25dd0.png" alt="4"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/d89d5ae104e7903d624d.png" alt="5"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/d24e37802c140589e18a.png" alt="6"></a></div></div></div></section><section class="section"><div class="container"><h2 class="section__h2"><a class="section__h2-link" href="#">Trending Movies</a></h2><div class="movies"><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/72ffcb1e9bccb9a69b30.png" alt="1"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/11cb5d1b85c30e455f5f.png" alt="2"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/a08da61145a14d78df2e.png" alt="3"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/78d46361916ed91efe60.png" alt="4"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/1616f891fa9d2aaf2944.png" alt="5"></a></div><div class="movies-item"><a class="movies__link" href="#"><img class="movies__img" src="assets/7f81041a47ccbc65018a.png" alt="6"></a></div></div><button class="section__btn">See more</button></div></section><section class="section"><div class="container"><h2 class="section__h2"><a class="section__h2-link" href="#">Popular Genres</a></h2><div class="genres"><div class="genres-item genres-item_romance"><div class="genres-icon"><img class="genres__image" src="assets/9f53c84f94b5845df29f.svg" alt=""></div><h3 class="genres__title">Romance</h3></div><div class="genres-item genres-item_drama"><div class="genres-icon"><img class="genres__image" src="assets/dc4d576ee7cc91436186.svg" alt=""></div><h3 class="genres__title">Drama</h3></div><div class="genres-item genres-item_historical"><div class="genres-icon"><img class="genres__image" src="assets/7ad394efb9139f5ac87f.svg" alt=""></div><h3 class="genres__title">Historical</h3></div><div class="genres-item genres-item_action"><div class="genres-icon"><img class="genres__image" src="assets/080a78c79e9e8ff25ad9.svg" alt=""></div><h3 class="genres__title">Action</h3></div><div class="genres-item genres-item_sci-fi"><div class="genres-icon"><img class="genres__image" src="assets/9ebd777f383cad1d4dbd.svg" alt=""></div><h3 class="genres__title">Sci-fi</h3></div><div class="genres-item genres-item_horror"><div class="genres-icon"><img class="genres__image" src="assets/5280520aa9e3a77b5c03.svg" alt=""></div><h3 class="genres__title">Horror</h3></div><div class="genres-item genres-item_comedy"><div class="genres-icon"><img class="genres__image" src="assets/939336c990f611433074.svg" alt=""></div><h3 class="genres__title">Comedy</h3></div><div class="genres-item genres-item_documentary"><div class="genres-icon"><img class="genres__image" src="assets/d4337e5506faeb228eaf.svg" alt=""></div><h3 class="genres__title">Documentary</h3></div></div></div></section><section class="section"><div class="container"><h2 class="section__h2"><a class="section__h2-link" href="#">Popular Actors & Directors</a></h2><div class="actors"><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/cc4a9815103d007e55bf.png" alt=""></a><h3 class="actors__title">Samantha Bowen</h3></div><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/22c711856fa134df0c27.png" alt=""></a><h3 class="actors__title">Rhys Birch</h3></div><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/62068735f715d6bb47d4.png" alt=""></a><h3 class="actors__title">James Holloway</h3></div><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/12396e21b03ae2c61357.png" alt=""></a><h3 class="actors__title">Joshua Walton</h3></div><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/bf95820efd124263c561.png" alt=""></a><h3 class="actors__title">Patrick Elliott</h3></div><div class="actors-item"><a class="actors__link" href=""><img class="actors__img" src="assets/0cabfbde85528965df49.png" alt=""></a><h3 class="actors__title">Morgan O'Neill</h3></div></div></div></section><section class="section"><div class="container"><div class="marketing"><div class="marketing-item"><a class="marketing__link" href="#"><img class="marketing__img first-item" src="assets/59d67c061e53e4a8621a.png" alt=""></a></div><div class="marketing-item"><a class="marketing__link" href="#"><img class="marketing__img last-item" src="assets/429997a8d41568ea2f7c.png" alt=""></a></div></div></div></section><section class="section"><div class="container"><div class="offer"><h2 class="offer__title">Are You New Here ? Don’t&nbsp;wait, Register Now.</h2><button class="offer__btn">Register Now</button></div></div></section><footer><div class="footer"><div class="footer-item"><a href="#"><img src="assets/3ebeb53d739f33353224.svg"></a></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Voice over and Subtitle</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Media Center</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Privacy</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Contact us</a></li></ul></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Voice Description</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Investor Relations</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Legal Provisions</a></li></ul></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Help Center</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Job Opportunities</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Cookies Preferences</a></li></ul></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Gift Cards</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Terms of Use</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Corporate Informations</a></li></ul></div></div></footer><footer><div class="footer"><div class="footer-item"><a href="#"><img src="assets/3ebeb53d739f33353224.svg"></a></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Voice over and Subtitle</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Media Center</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Privacy</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Contact us</a></li></ul></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Voice Description</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Investor Relations</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Legal Provisions</a></li></ul></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Help Center</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Job Opportunities</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Cookies Preferences</a></li></ul></div><div class="footer-item"><ul class="footer-list"><li class="footer-list__item"><a class="footer-list__link" href="#">Gift Cards</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Terms of Use</a></li><li class="footer-list__item"><a class="footer-list__link" href="#">Corporate Informations</a></li></ul></div></div></footer></body></html>
