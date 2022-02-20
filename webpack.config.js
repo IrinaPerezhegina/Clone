@@ -31,7 +31,7 @@ module.exports = {
 },
     plugins: [
         new MiniCssExtractPlugin({
-        filename: '[name].[contenthash].scss'
+        filename: '[name].[contenthash].css'
         }),
         new HtmlWebpackPlugin({
         filename: "index.html",

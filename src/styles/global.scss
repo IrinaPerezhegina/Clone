@@ -5,18 +5,28 @@ $white:#fff;
 $bg-gradient:linear-gradient(151deg, rgba(50,108,255,1) 0%, rgba(38,255,242,1) 100%);
 $bg-gradient-safe:rgb(50,108,255);
 
+$r_minmob:            320px;
+$r_mob_360:           360px;
+$r_mob_400:           400px;
+$r_mob_500:           500px;
+$r_mob_600:           600px;
+$r_tab:               768px;
+$r_desk:             1000px;
+$r_desk_hd:          1200px;
+
 html {
     font-size: 10px;
 }
 body {
     background-color: #000 ;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     // font-family: 'Marcellus', serif;
     // font-family: 'Marcellus SC', serif;
- 
-    font-family: 'Mulish', sans-serif;
-}
+     font-family: 'Mulish', sans-serif;
+    @media (max-width: $r_tab) {
+        font-size: 14px;
+}}
 button {
     &:focus {
         outline: none;

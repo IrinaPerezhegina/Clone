@@ -4,32 +4,69 @@
     padding-right: 1.5rem;
     margin: 0 auto;
 }
-.section-banner{
+.section-banner {
     border-bottom: .1rem solid #2F2E2E;
     position: relative;
     overflow: hidden;
-    &__image {
-       position: absolute;
-       right: 0;
-       z-index: -1;
-       height: 100%;
+    background-image: url('../images/banner.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
+    @media (max-width: $r_desk) {
+        background-image: url('../images/banner-min.png');
+        background-position: center center;
+        background-size: cover;
+    }
+    .container {
+        @media (max-width: $r_desk) {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
+
 .banner {
     max-width: 56.2rem;
     padding-top: 12.2rem;
     padding-bottom: 20.3rem;
     background-color: $black;
     box-shadow: 100px 0px 100px #000000;
+    @media (max-width: $r_desk_hd) {
+        padding-top: 7rem;
+        padding-bottom: 12rem;
+    }
+    @media (max-width: $r_desk) {
+        max-width: 100%;
+        background-color: transparent;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    @media (max-width: $r_tab) {
+        padding-top: 4rem;
+        padding-bottom: 6rem;
+    }
     &__title {
         font-family: 'Marcellus', serif;
         line-height: 7.5rem;
         font-size: 8rem;
+        @media (max-width: $r_tab) {
+            font-size: 6rem;
+            line-height: 1.1;
+        }
+        @media (max-width: $r_mob_600) {
+            font-size: 4rem;
+        }
     }
     &__text {
         color: #C2C2C2;
         font-size: 1.8rem;
         line-height: 1.6;
+        @media (max-width: $r_tab) {
+            font-size: 1.6rem;
+        }
+        @media (max-width: $r_mob_600) {
+            font-size: 1.4rem;
+        }
     }
     &-info {
         font-weight: 800;
@@ -59,6 +96,9 @@
         }
         &__time {
             margin-right: 6.1rem;
+            @media (max-width: $r_mob_600) {
+                margin-right: 2.3rem;
+            }
         }
         &__rating {
             position: relative;
@@ -76,6 +116,10 @@
     }
     &-control {
         margin-top: 3.1rem;
+        @media (max-width: $r_mob_400) {
+            display: flex;
+            flex-direction: column;
+        }
         &__btn {
             background-color: transparent;
             border: none;
@@ -95,6 +139,14 @@
             margin-right: 3rem;
             box-shadow: 0px 4px 50px rgba($bg-gradient-safe, 0.5);
             transition: 0.2s ease box-shadow;
+            @media (max-width: $r_tab) {
+                margin-right: 1.5rem;
+            }
+            @media (max-width: $r_mob_400) {
+                margin-right: 0;
+                margin-bottom: 2rem;
+                padding-left: 3rem;
+            }
             &:hover {
                 box-shadow: 0px 0px 0px rgba($bg-gradient-safe, 0.5);
             }
@@ -107,6 +159,9 @@
                 position: absolute;
                 left: 3rem;
                 top: calc(50% - .9rem);
+                @media (max-width: $r_mob_400) {
+                    display: none;
+                }
             }
         }
         &__btn-more {

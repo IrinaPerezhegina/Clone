@@ -1,6 +1,10 @@
 footer {
     background-color: #101012;
     padding: 7rem 0 5rem;
+    @media (max-width: $r_tab) {
+        padding: 5rem 0 3rem;
+    }
+
 }
 .footer {
     display: flex;
@@ -11,20 +15,72 @@ footer {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     margin: 0 auto;
+    @media (max-width: $r_desk_hd) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+        grid-template-areas: 'logo a b' 'logo c d';
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    @media (max-width: $r_desk) {
+        grid-template-columns: 200px 1fr 1fr;
+    }
+    @media (max-width: $r_tab) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'logo logo' 'a b' 'c d';
+    }
+    &-logo {
+        &__img {
+            @media (max-width: $r_tab) {
+                margin-bottom: 2rem;
+                max-width: 120px;
+            }
+            @media (max-width: $r_mob_600) {
+                max-width: 105px;
+            }
+        }
+    }
+    &-item {
+        &:nth-child(1) {
+            grid-area: logo;
+        }
+        &:nth-child(2) {
+            grid-area: a;
+        }
+        &:nth-child(3) {
+            grid-area: b;
+        }
+        &:nth-child(4) {
+            grid-area: c;
+        }
+        &:nth-child(5) {
+            grid-area: d;
+        }
+    }    
     &-list {
         list-style: none;
         padding-left: 0;
         margin: 0;
         &__item {
             margin-bottom:2rem ;
+            @media (max-width: $r_tab) {
+                margin-bottom: 1.6rem;
+            }
         }
         &__link {
             font-size: 1.8rem;
             color: #C2C2C2;
             text-decoration: none;
             font-weight: 600;
+            @media (max-width: $r_tab) {
+                font-size: 1.6rem;
+                line-height: 1.5;
+            }
+            @media (max-width: $r_mob_500) {
+                font-size: 1.4rem;
+            }
         }
     }
 
 }
-

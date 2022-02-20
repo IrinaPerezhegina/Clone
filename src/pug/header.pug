@@ -1,7 +1,7 @@
 header 
     .header 
-        a(href="#") 
-            img(src=require('../images/logo.svg'), alt=logo)
+        a(href="#").header-logo
+            img(src=require('../images/logo.svg'), alt=logo).header-logo__img
         nav
             ul.nav 
                 li.nav-item 
@@ -19,6 +19,10 @@ header
                 button.control-btn.control-btn_notice
             li.control-item
                 button.control-btn.control-btn_account
+        button.burger
+                span.burger__item 
+                span.burger__item 
+                span.burger__item
                     
 
 
